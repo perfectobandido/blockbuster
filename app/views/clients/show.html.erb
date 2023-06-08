@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @client %>
+<br>
+<div>
+  <%= link_to "Editar cliente", edit_client_path(@client), class: "btn btn-primary btn-sm" %> |
+  <%= link_to "Volver a clientes", clients_path, class: "btn btn-primary btn-sm" %>
+  <%= button_to "Borrar cliente", @client, method: :delete, class: "btn btn-danger btn-sm" %>
+</div>

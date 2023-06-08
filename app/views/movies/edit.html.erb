@@ -1,0 +1,29 @@
+<%= form_with(model: @movie, url: movie_path(@movie), method: :patch) do |form| %>
+  <!-- Otros campos de edición de la película -->
+  <h1>Edición de Película</h1>
+
+
+
+  <div class="col-4 py-2">
+    <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center" >
+        <%= form.label :"Película:"%>
+        <%= form.text_field :name, class: "text-bg-dark"  %>
+      </div>
+      
+      <div class="field text-center" style="background-color: blue">
+        <br>
+        <%= form.label :"Cliente:"%>
+        <%= form.collection_select :client_id, @clients, :id, :name, prompt: "Seleccione un cliente" %>
+        <br><br>
+      </div>
+      
+
+    </div>
+  </div>
+
+
+  <br>
+  <%= form.submit "Grabar película", class: "btn btn-success  btn-sm" %>
+  <%= link_to "Volver a Películas", movies_path, class: "btn btn-primary btn-sm" %>
+<% end %>
